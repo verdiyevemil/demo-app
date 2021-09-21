@@ -1,0 +1,7 @@
+<app-search-box></app-search-box> 
+
+<mat-selection-list #items [multiple]="false">
+    <mat-list-option *ngFor="let item of [1,2,3,4,5]" [value]="item">
+        <app-list-item [item]="item"></app-list-item>
+    </mat-list-option>
+</mat-selection-list>
