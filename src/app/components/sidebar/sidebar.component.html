@@ -1,7 +1,14 @@
 <app-search-box></app-search-box> 
 
 <mat-selection-list #items [multiple]="false">
-    <mat-list-option *ngFor="let item of [1,2,3,4,5]" [value]="item">
-        <app-list-item [item]="item"></app-list-item>
+    <mat-list-option *ngFor="let note of notes" [value]="note">
+        <!-- <app-list-item [item]="note"></app-list-item> --> 
+        <div mat-line>{{note.name}}</div>
+        <div mat-line> {{note.date | date}} </div> 
+        <mat-divider></mat-divider>
     </mat-list-option>
-</mat-selection-list>
+</mat-selection-list> 
+
+<p>
+    Option selected: {{items.selectedOptions.selected[0]?.value.name}}
+  </p>
