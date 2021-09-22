@@ -1,14 +1,9 @@
-<app-search-box></app-search-box> 
+<app-search-box></app-search-box>  
 
-<mat-selection-list #items [multiple]="false">
-    <mat-list-option *ngFor="let note of notes" [value]="note">
-        <!-- <app-list-item [item]="note"></app-list-item> --> 
+<mat-selection-list #items [multiple]="false" (selectionChange)="noteSelected($event)">
+    <mat-list-option *ngFor="let note of filteredNotes$ | async" [value]="note"> 
         <div mat-line>{{note.name}}</div>
-        <div mat-line> {{note.date | date}} </div> 
+        <div mat-line> {{note.date | date}} <span class="ml-2 text-muted">{{note.text}}</span></div> 
         <mat-divider></mat-divider>
     </mat-list-option>
-</mat-selection-list> 
-
-<p>
-    Option selected: {{items.selectedOptions.selected[0]?.value.name}}
-  </p>
+</mat-selection-list>  

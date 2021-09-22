@@ -1,4 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app-container{
+    height: 100vh;
+    .mat-sidenav{
+        width: 300px;
+    }
+    .mat-sidenav-content{
+        padding: 16px;
+        button{
+            margin-right: 16px;
+        }
+    }
+}
+
+.p-0{
+    padding: 0 !important;
+}
+.p-3{
+    padding: 16px;
+}
+
+.ql-container{
+    height:  300px;
+}
+
+.text-muted{
+    color: #949494;
+}
+
+.ml-2{
+    margin-left: 8px;
+}
+
+.my-3{
+    margin: 16px 0;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.mat-form-field.pb-0{
+    .mat-form-field-wrapper{
+        padding-bottom: 0px;
+    }
+}  

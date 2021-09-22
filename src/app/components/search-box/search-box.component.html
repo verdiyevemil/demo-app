@@ -1,1 +1,6 @@
-<p>search-box works!</p>
+<div class="p-3"> 
+    <mat-form-field appearance="outline" class="w-100 pb-0">
+        <mat-icon matPrefix class="text-muted">search</mat-icon> 
+        <input matInput placeholder="Search..." [(ngModel)]="searchText" (ngModelChange)="filter()">  
+    </mat-form-field> 
+</div>

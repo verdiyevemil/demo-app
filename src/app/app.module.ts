@@ -3,10 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Material modules
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
+// Editor
+import { QuillModule } from 'ngx-quill';
 
 // Components
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -19,6 +28,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +36,22 @@ import { AppEffects } from './app.effects';
     SidebarComponent,
     ListItemComponent,
     WorkspaceComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatListModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    QuillModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers
     }),

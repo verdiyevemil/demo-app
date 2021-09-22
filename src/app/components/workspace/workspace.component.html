@@ -1,1 +1,21 @@
-<p>workspace works!</p>
+<div *ngIf="selectedNote$ | async">  
+
+    <div *ngIf="!showEditor" [innerHTML]="(selectedNote$ | async)!.text"></div>
+
+    <mat-card *ngIf="showEditor" class="p-0">
+        <form [formGroup]="form">
+            <quill-editor formControlName="text"></quill-editor>   
+        </form> 
+    </mat-card>
+
+    <div class="my-3">
+        <button mat-raised-button color="warn" (click)="delete()">Delete</button> 
+        <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+    </div>
+    
+
+</div>
+
+
+
+         
